@@ -1,24 +1,4 @@
- ACRA Node Server (v. 0.0.3)
-================
-
-Server [ACRA](http://acra.ch/) for [Node.js](http://nodejs.org/) with data base [Mongodb](http://www.mongodb.org/)
-
-Save all the crash reports in your own server.
-
-### version 0.0.3
-* Statistics by android version.
-* Statistics by date error.
-
-
-### version 0.0.2
-* Statistics by mobile.
-
-Technologies Used
-------------
-
-Server = [node.js, express, ejs, mongodb, emailjs, node-properties-parser, colors, moment, async]
-
-Client = [bootstrap, jquery, tablesorter, jqplot]
+ ACRA Node Server
 
 Installation
 ------------
@@ -29,59 +9,13 @@ Installation
  4. Run app via "$ node appAcra"
 
 
-Philosophy
-------------
-
- * Build a Server to replace Google Docs.
- * Write using modern tecnologies as Node.js and Mongodb.
- * Simple configuration with a only one properties file.
- * Interface using Bootstrap.
-
-Features
-------------
-
- * Basic front end web pages.
- * Send emails when receive ACRA report.
- * Login system to protect access.
- * Export all reports in json format.
- * Export detail report in json format.
- * Delete report.
- * Multiple applications in the same server.
- * Separate the crash in differents collections by app
-
-## If you have previously version 0.0.2 or 0.0.1
-
-You need to convert the USER_CRASH_DATE from Text to Date format, the solution is execute a script:
-
-modify_db.js
-
-Edit the script:
-
-```
-var NAME_COLLECTION = "your_collection";
-var DB_URL = "mongodb://127.0.0.1:27017/your_db";
-```
-
-And Execute
-
-```
-node modify_db.js
-```
 
 
-## How to config ACRA Class in Android
+## Configuring ACRA Class in Android
 
-1. Config Acra Class in application with the url of the server
+Add the following dependencies in gradle
 
-2. Configuration URL in Java Class (http://SERVER:PORT_SERVER/logs/NAME_APP)
-
- 2.1. SERVER (IP or DNS)
-
- 2.2. PORT_SERVER (PORT WEB SERVER) 
-
- 2.3. NAME_APP (NAME APP where will be save all the crash)
-
- * Example url: http://my_server:port_server/logs/my_app
+ compile 'ch.acra:acra:4.9.0'
 
 ```Java
 
@@ -144,30 +78,13 @@ to = john@mycompany.com,elizabeth@mycompany.com
 date_format=YYYY-MM-DD hh:mm:ss
 ```
 
-## Configuration Mongodb
 
-Automatic configuration:
-
- * Creation of DB automatic
- * Creation collection automatic
- * Independent collections by App
-
-## Access server
-
- * http://my_server:port_server (and login)
-
-
-##Thank you 
-
-Paolo Casarini that made the original implementation:
-
-http://www.casarini.org/blog/2013/acra-nodejs-mongodb/
 
 
 ## License
 ( The MIT License )
 
-Copyright (c) 2013 Diego Martin Moreno 
+Copyright (c) 2016 Mithun Sarker 
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
